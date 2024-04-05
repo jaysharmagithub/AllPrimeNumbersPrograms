@@ -5,8 +5,8 @@ public class PrimeNumChecker1ofTheBestOptimized {
     if(num<2) return false;
     if(num % 2 == 0 || num % 3 == 0 ) return false;
     if(num ==2 || num ==3) return true;
-    for(int k=5; k<=Math.sqrt(num); k+=6) {
-      if(num % (k+1) == 0 && num % (k+5) == 0) return false; 
+    for(int k=5; k*k<=num; k+=6) {
+      if(num % k == 0 && num % (k+2) == 0) return false; 
     }
     return true;
   }
